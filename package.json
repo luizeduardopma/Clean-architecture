@@ -1,0 +1,36 @@
+{
+  "name": "clean-implementation",
+  "version": "1.0.0",
+  "description": "Projeto base para estudar Arquitetura Limpa e TDD.",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "nodemon --exec ts-node --transpile-only --files ./src/index.ts --ignore ./tests",
+    "test": "jest --coverage=false",
+    "test:coverage": "jest",
+    "migration:make": "knex --knexfile=./src/config/knexfile.ts migrate:make -x ts",
+    "migration:latest": "knex --knexfile=./src/config/knexfile.ts migrate:latest",
+    "migration:rollback": "knex --knexfile=./src/config/knexfile.ts migrate:rollback"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.8",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
+    "ts-jest": "^27.1.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "knex": "^0.95.15",
+    "pg": "^8.7.1",
+    "uuidv4": "^6.2.12"
+  }
+}
